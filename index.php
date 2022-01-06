@@ -1,7 +1,9 @@
 <?php
 
-    //header('Location: '.$uri.'/dmia/');
-	//exit;
+    include('config/db_conn.php');
+    include('config/signin.php');
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -13,11 +15,6 @@
 
         <link rel="stylesheet" type="text/css" href="css/login.css" />
 
-        <script>
-            function redi() {
-                location.href = "saHome.php";
-            }
-        </script>
     </head>
 
     <body>
@@ -27,14 +24,14 @@
         <h1>Login</h1>
 
         <div class="loginblue">
-            <form>
+            <form action="index.php" method="POST">
                 <label>UID</label> <br>
-                <input type="text"> <br>
+                <input type="text" name="uid"> <br>
                 <label>Password</label> <br>
-                <input type="password"> <br>
-                <button id="submit" onclick="redi()">
-                <a href="saHome.php">Login</a>
-                </button>
+                <input type="password" name="password"> <br>
+                <input type="submit" id="submit" name="submit" value="submit">
+                    <a href="saHome.php">Login</a>
+                </input>
 
                 
             </form>

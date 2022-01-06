@@ -8,6 +8,7 @@
     --border: 1px solid black;
 
     --brdrrad: 25px;
+    --brdrrad1: 15px;
 
     --shadw: 10px 12px gray;
     --shadwhvr: 10px 12px #2e2d2d;
@@ -16,6 +17,7 @@
 
 
 body {
+    max-width: 100%;
     margin: auto;
     background-color: var(--white1);
 }
@@ -119,27 +121,134 @@ body {
     margin: auto;
 }
 
+/* add button */
+
+.add {
+    position: absolute;
+    right: 5%;
+    top: 10%;
+
+    min-height: 5%;
+    width: 12%;
+
+    padding: 8px 1px;
+
+    background-color: var(--blue);
+
+    outline: none;
+    border: 1px solid black;
+    border-radius: 8px;
+
+    color: white;
+}
+
+.add:hover {
+    background-color: var(--blue1);
+    border: 1px solid white;
+    border-radius: 12px;
+}
 
 /* hospital/doctor content */
 
 .hdcontent {
-    min-height: 182%;
+    min-height: 82%;
     width: 92%;
 
     position: absolute;
     right: 0;
     top: 18%;
 
-    background-color: #097187;
 }
 
 .hd {
-    height: 20%;
-    width: 10%;
-    margin: 5%;
+    height: auto;
+    width: 15%;
+    margin: 2%;
+    background-color: white;
 
-    border: var(--border);
+    box-shadow: var(--shadw);
+
+    overflow: hidden;
+
     border-radius: var(--brdrrad);
+    border-right: var(--border);
+    border-bottom: var(--border);
+
+    float: left;
+
+}
+
+.logcon {
+    height: 80%;
+    width: 100%;
+
+    overflow: hidden;
+
+    border-bottom:1px solid #2e2d2d;
+}
+
+.hdp {
+    width: 85%;
+    margin: 8%;
+    border-radius: 50%;
+}
+
+.hnamecon {
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.hname {
+    margin: 5%;
+    text-align: center;
+}
+
+.hlin {
+    text-decoration: none;
+    color: black;
+}
+
+/* inputs */
+
+.inp {
+
+    position: absolute;
+    left: 9%;
+
+    height: 80%;
+    width: 85%;
+    padding: 1%;
 
     background-color: white;
+
+    border-bottom-left-radius: var(--brdrrad1);
+    border-bottom-right-radius: var(--brdrrad1);
+}
+
+.iin {
+    position: relative;
+    top: 15%;
+
+    margin: 0 15%;
+}
+
+.inlab {
+    margin-left: 1%;
+}
+
+.inin {
+    margin-top: 1%;
+    margin-bottom: 4%;
+
+    height: 25px;
+    width: 45%;
+}
+
+.cent {
+    width: 100%;
+}
+
+.subm {
+    margin: auto;
 }
