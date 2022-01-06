@@ -1,0 +1,257 @@
+:root{
+	/* colors */
+	--whis: #E8E8E8;
+	--blue1: #0DA2C2;
+	--tea: #097187;
+	--gry1: #b1aeae;
+
+	/* border */
+	--brdr1: 1px solid;
+	--brdr2: 1px solid;
+
+	--raid1: 15px;
+	--raid2: 25px;
+
+	--shadow: 7px 10px #cccbcb;
+	--shadow1: 10px 10px #cccbcb;
+	--shadowhov: 10px 10px gray;
+
+	/* sizes 1 */
+	--hdbxh: 220px;
+	--hdbxw: 150px;
+	--imgw: 80%;
+	--imgdh: 150px;
+
+	--hdtxtdh: 70;
+}
+
+body{
+	margin: auto;
+	background-color: var(--whis);
+}
+
+.sidedav {
+	height: 100%;
+	width: 4%;
+	background-color: var(--blue1);
+	float: left;
+	overflow: hidden;
+	padding-top: 140px;
+	padding-left: 5px;
+	padding-right: 5px;
+	position: fixed;
+}
+
+.sidnavbut{
+	position: relative;
+	margin-top: 15px;
+	width: 100%;
+	padding-bottom: 20%;
+	z-index: none;
+	vertical-align: middle;
+}
+
+.sidnavbut:hover{
+	background-color: var(--tea);
+}
+
+.topbar{
+	height: 5%;
+	width: auto;
+	float: top;
+}
+
+.nav {
+  width: 305px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 9px;
+  left: 20px;
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 36px;
+  opacity: 1;
+  text-align: left;
+}
+
+.topnav, .topnavadmin {
+	height: 6%;
+	background-size: cover;
+	position: absolute;
+	opacity: 1;
+	overflow: hidden;
+	background: white;
+	border-radius: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 25px;
+}
+
+.topnav{
+	width: 50%;
+	top: 2px;
+	left: 108px;
+}
+
+.topnavadmin{
+	width: 20%;
+	right: 5%;
+}
+
+.tpo{
+	font-size: 18pt;
+	margin: 25;
+	top: 100px;
+}
+
+
+
+.addbutton {
+	height: 5%;
+	width: 12%;
+	position: fixed;
+	right: 30px;
+	top: 50px;
+	background-color: #035efc;
+	border-radius: 15px;
+}
+
+.butte {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	margin: 5px;
+	color: white;
+	text-decoration: none;
+}
+
+
+
+.content{
+	height: auto;
+	width: auto;
+	position: absolute;
+	top: 10%;
+	left: 6%;
+	overflow: hidden;
+	padding: 15px;
+}
+
+.cont{
+	height: 200px;
+	width: 200px;
+	background-color: white;
+	position: relative;
+	margin: 15;
+	float: left;
+	overflow: hidden;
+	border-radius: 10px;
+
+	box-shadow: var(--shadow1);
+	border-right: var(--brdr1);
+	border-bottom: var(--brdr1);
+	border-color: var(--gry1);
+}
+
+.cont:hover{
+	background-color: #d8d8d8;
+}
+
+.icon{
+	position: auto;
+	width: 70%;
+	float: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.conta{
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	bottom: 10%;
+}
+
+
+
+.fillform {
+	height: 80%;
+	width: 88%;
+	background-color: white;
+	position: absolute;
+	left: 120px;
+	border-radius: 0 0 25px 25px;
+}
+
+.frmo {
+	position: absolute;
+	left: 15%;
+	top: 20%;
+}
+
+.boxin {
+	height: 35px;
+	width: 550px;
+}
+
+.frmtxt {
+	font-size: 18;
+}
+
+.submit {
+	height: 20px;
+}
+
+.contenthd {
+	height: auto;
+	width: 90%;
+	padding: 20px;
+	position: absolute;
+	top: 15%;
+	right: 0;
+	overflow: auto;
+}
+
+.coon {
+	height: var(--hdbxh);
+	width: var(--hdbxw);
+	background-color: white;
+	float: left;
+
+	border-right: var(--brdr1);
+	border-bottom: var(--brdr1);
+	border-radius: var(--raid1);
+	border-color: var(--gry1);
+
+	overflow: -moz-hidden-unscrollable;
+	box-shadow: var(--shadow);
+
+	margin: 25px;
+}
+
+.coon:hover {
+	box-shadow: var(--shadowhov);
+	border-color: black;
+}
+
+.hlogd {
+	height: var(--imgdh);
+	margin: auto;
+}
+
+.hlogo {
+	width: var(--imgw);
+	margin: 15px;
+}
+
+.hdnamec {
+	height: var(--hdtxtdh);
+	padding: 8px;
+	margin-top: 0;
+}
+
+.hdname {
+	text-align: center;
+	margin: auto;
+}

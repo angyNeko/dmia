@@ -1,0 +1,145 @@
+:root {
+
+    --blue: #0DA2C2;
+	--blue1: #097187;
+    --white1: #E8E8E8;
+    --smok: #b1aeae;
+
+    --border: 1px solid black;
+
+    --brdrrad: 25px;
+
+    --shadw: 10px 12px gray;
+    --shadwhvr: 10px 12px #2e2d2d;
+
+}
+
+
+body {
+    margin: auto;
+    background-color: var(--white1);
+}
+
+/* navbar start */
+
+.navbar {
+    background-color: var(--blue);
+
+    height: 100%;
+    width: 5%;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    overflow: auto;
+}
+
+.icon {
+    height: 12%;
+    width: 100%;
+    margin: auto;
+
+    position: relative;
+    top: 24%;
+
+}
+
+.icon:hover {
+    background-color: var(--blue1);
+}
+
+.a {
+    width: 100%;
+    height: 100%;
+    background-color:  white;
+}
+
+.icnimg {
+    width: 70%;
+    margin: auto;
+    position: relative;
+
+    top: 15%;
+    left: 15%;
+}
+
+/* home content */
+
+.hmcon {
+    min-height: 75%;
+    width: 91%;
+
+    position: absolute;
+    top: 15%;
+    right: 0;
+
+    padding: 1%;
+    overflow: hidden;
+    overflow-wrap: normal;
+}
+
+.aconticon {
+    width: 20%;
+    background-color: white;
+
+    margin: 6.5%;
+
+    float: left;
+
+    border-right: var(--border);
+    border-bottom: var(--border);
+    border-radius: var(--brdrrad);
+
+    box-shadow: var(--shadw);
+
+    text-decoration: none;
+}
+
+.aconticon:hover {
+    background-color: var(--smok);
+    border-color: white;
+    box-shadow: var(--shadwhvr);
+}
+
+.conticon {
+    width: 70%;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: x-large;
+}
+
+.cicon {
+    width: 100%;
+    margin: auto;
+}
+
+
+/* hospital/doctor content */
+
+.hdcontent {
+    min-height: 182%;
+    width: 92%;
+
+    position: absolute;
+    right: 0;
+    top: 18%;
+
+    background-color: #097187;
+}
+
+.hd {
+    height: 20%;
+    width: 10%;
+    margin: 5%;
+
+    border: var(--border);
+    border-radius: var(--brdrrad);
+
+    background-color: white;
+}
