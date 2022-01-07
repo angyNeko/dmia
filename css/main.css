@@ -17,6 +17,7 @@
 
 
 body {
+    max-width: 100%;
     margin: auto;
     background-color: var(--white1);
 }
@@ -63,6 +64,56 @@ body {
 
     top: 15%;
     left: 15%;
+}
+
+/*  topnav */
+
+.topnav {
+    height: 10%;
+    width: 92%;
+    
+    position: absolute;
+    right: 0;
+
+    margin: auto;
+    padding: 0%;
+}
+
+.lef {
+    height: 100%;
+    width: 40%;
+    margin: 0;
+
+    position: absolute;
+    top: 0;
+
+    background-color: white;
+
+    border-bottom-left-radius: var(--brdrrad);
+    border-top-right-radius: var(--brdrrad);
+}
+
+.cp {
+    margin-left: 15%;
+}
+
+.rig {
+    height: 100%;
+    width: 25%;
+    margin: 0;
+
+    position: absolute;
+    top: 0;
+    right: 5%;
+
+    background-color: white;
+
+    border-top-left-radius: var(--brdrrad);
+    border-bottom-right-radius: var(--brdrrad);
+}
+
+.usr {
+    text-align: center;
 }
 
 /* home content */
@@ -125,7 +176,7 @@ body {
 .add {
     position: absolute;
     right: 5%;
-    top: 10%;
+    top: 15%;
 
     min-height: 5%;
     width: 12%;
@@ -150,12 +201,12 @@ body {
 /* hospital/doctor content */
 
 .hdcontent {
-    min-height: 82%;
+    min-height: 77%;
     width: 92%;
 
     position: absolute;
     right: 0;
-    top: 18%;
+    top: 23%;
 
 }
 
@@ -212,19 +263,29 @@ body {
 
 .inpp {
 
-    position: relative;
+    position: absolute;
     left: 9%;
 
     min-height: 88%;
     width: 85%;
     padding: 25% auto;
 
-    background-color: blue;
+    background-color: white;
 
     border-bottom-left-radius: var(--brdrrad1);
     border-bottom-right-radius: var(--brdrrad1);
 
     overflow: hidden;
+}
+
+.inp {
+
+
+    min-height: 88%;
+    width: 85%;
+    padding: 25% auto;
+
+    margin: 5% auto;
 }
 
 .iin {
@@ -248,6 +309,8 @@ body {
 
 .cent {
     width: 100%;
+    float: left;
+    margin: auto;
 }
 
 .subm {

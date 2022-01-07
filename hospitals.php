@@ -1,5 +1,5 @@
 <?php
-
+    $curPag = 'Hospitals';
 ?>
 
 
@@ -9,6 +9,7 @@
         </button>
 
         <?php require("nodeModules/navbarMod.php") ?>
+        <?php require("nodeModules/topnav.php") ?>
         <?php require("nodeModules/hospcontMod.php") ?>
             
     </body>

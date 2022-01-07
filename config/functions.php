@@ -55,3 +55,36 @@ function loginuser($conn, $uid, $password){
         }
     
 }
+
+
+// check if doctor is already in the database
+
+
+function docExs($conn, $fname) {
+
+    $docE = "SELECT * FROM doctors WHERE fname = ?";
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt, $docE)) {
+        return true;
+    }
+
+    mysqli_stmt_close($stmt);
+
+}
+
+// check if hospital is already in the database
+
+
+function hosExs($conn, $fname) {
+
+    $hosE = "SELECT * FROM hospitals WHERE hosname = ?";
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt, $hosE)) {
+        return true;
+    }
+
+    mysqli_stmt_close($stmt);
+
+}

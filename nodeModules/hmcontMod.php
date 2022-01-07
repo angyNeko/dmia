@@ -14,12 +14,4 @@
 		<p class="title"> Doctors </p>
 	</a>
 
-    <a href="admin.php" class="aconticon">
-		<div class="conticon">
-			<img src="images/icons/admin.png" class="cicon">
-		</div>
-		<p class="title"> Admin </p>
-	</a>
-
-
 </div>

@@ -4,14 +4,12 @@
     include('config/functions.php');
 
     $email = $lname = $fname = $cont = $bdate = '';
-	$errors = array('email' => '', 'fname' => '', 
-    'landline' => '', 'bdate' => '', 'lname' => '',);
-
-    
-
+	$errors = array('email' => '', 'fname' => '', 'bdate' => '', 'lname' => '', 'cont' => '',
+    'docE' => '');
 
     //end of file upload globals
 	if(isset($_POST['submit'])){
+
     
             $filename = $_FILES["fileToUpload"]["name"];
             $filenTmpName = $_FILES["fileToUpload"]["tmp_name"];
@@ -33,7 +31,7 @@
                 if($fileError == 0) {
                     $filenameNew = uniqid('', true).".".$fileActualExt;
     
-                    $fileDest = "images/logo/" . $filenameNew;
+                    $fileDest = "images/ppic/" . $filenameNew;
     
                 } else {
                     echo "cant upload file";
@@ -56,8 +54,15 @@
             } else{
                 $title = $_POST['fname'];
                 if(!preg_match('/^[a-zA-Z\s]+$/', $title)){
-                    $errors['fname'] = 'Hospital Name must be letters and spaces only';
+                    $errors['fname'] = 'Name must be letters and spaces only';
                 }
+            }
+
+            // check if doc exist in db
+
+            if(docExs($conn, htmlspecialchars($_POST['fname']))){
+                header("Location: adddoc.php?error=doctoralreadyindatabase");
+                $errors['docE'] = 'Doctor is already in the database';
             }
 
             // check last name
@@ -66,31 +71,44 @@
             } else{
                 $title = $_POST['lname'];
                 if(!preg_match('/^[a-zA-Z\s]+$/', $title)){
-                    $errors['lname'] = 'Hospital Name must be letters and spaces only';
+                    $errors['lname'] = 'Last Name must be letters and spaces only';
+                    echo htmlspecialchars($_POST['lname'] . '\'');
+                    echo htmlspecialchars($_POST['lname'] . '\'');
+                    echo htmlspecialchars($_POST['lname'] . '\'');
+                    echo htmlspecialchars($_POST['lname'] . '\'');
+                    echo htmlspecialchars($_POST['lname'] . '\'');
+                    echo htmlspecialchars($_POST['lname'] . '\'');
+                    echo htmlspecialchars($_POST['lname'] . '\'');
                 }
             }
 
             // check contact number
             if(empty($_POST['cont'])){
-                $errors['cont'] = 'At least one ingredient is required';
-                header('Location: www.google.com');
+                
+                $errors['cont'] = 'Must not be empty';
+
+                header('Location: fb.com');
+                //echo htmlspecialchars($_POST['cont']);
+
             } else{
                 $cont = $_POST['cont'];
-                if(!filter_var($landline, FILTER_VALIDATE_FLOAT)){
+                if(!filter_var($cont, FILTER_VALIDATE_FLOAT)){
                     $errors['cont'] = 'Ingredients must be a comma separated list';
                 }
             }
             
             // check birth date
-            if(empty($_POST['bdate'])){
+            $pattern = "^[0-9]{4}-(((0[13578]|(10|12))-(0[1-9]|[1-2][0-9]|3[0-1]))|(02-(0[1-9]|[1-2][0-9]))|((0[469]|11)-(0[1-9]|[1-2][0-9]|30)))$";
+            $bdate = date('Y-m-d', strtotime($_POST['bdate']));
+            
+            if(empty($bdate)){
                 $errors['bdate'] = 'At least one ingredient is required';
-                header('Location: www.google.com');
             } else{
                 $bdate = $_POST['bdate'];
             }
 
-            if(array_filter($errors)){
-                
+            if(array_filter($errors) == true){
+                print_r($errors);
             } else {
     
                 // upload file
@@ -101,13 +119,11 @@
                 $lname = mysqli_real_escape_string($conn, $_POST['lname']);
                 $email = mysqli_real_escape_string($conn, $_POST['email']);
                 $cont = mysqli_real_escape_string($conn, $_POST['cont']);
-                $bdate = mysqli_real_escape_string($conn, $_POST['bdate']);
-                $curdate = date("Y/m/d");
     
                 // create sql
-                $sql = "INSERT INTO hospitals(firstname, lastname,
-                email,landline,regdate, imgpath) 
-                VALUES('$fname','$email','$landline','$curdate', '$fileDest')";
+                $sql = "INSERT INTO doctors(firstname, lastname,
+                email, cont, birthdate, profpth)
+                VALUES('$fname', '$lname','$email','$cont','$bdate', '$fileDest')";
     
     
                 // save to db and check
@@ -115,7 +131,7 @@
                     // success
                     header('Location: hospitals.php');
                 } else {
-                    header('Location: addhos.php');
+                    echo 'lasterror';
                 }
     
                 
@@ -144,8 +160,8 @@
                 value="<?php echo htmlspecialchars($lname) ?>"><br>
 
                 <label for="" class="inlab">Birth Date</label> <br>
-                <input type="date" class="inin" name="lname"
-                value="<?php echo htmlspecialchars($bdate) ?>"><br>
+                <input type="date" class="inin" name="bdate"
+                value="<?php echo date('Y-m-d') ?>"><br>
 
                 <label for="" class="inlab">Email</label> <br>
                 <input type="text" class="inin" name="email"
@@ -153,7 +169,7 @@
 
                 <label for="" class="inlab">Contact Number</label> <br>
                 <input type="text" class="inin" name="cont"
-                value="<?php echo htmlspecialchars($cont) ?>"><br>
+                value="<?php echo $cont ?>" maxlength="11" minlength="11"><br>
 
                 
                 Select image to upload:

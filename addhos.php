@@ -4,9 +4,7 @@
 	include('config/functions.php');
 
 	$email = $hname = $landline = '';
-	$errors = array('email' => '', 'hname' => '', 'landline' => '');
-
-
+	$errors = array('email' => '', 'hname' => '', 'landline' => '', 'hosE' => '');
 
     //end of file upload globals
 
@@ -58,6 +56,14 @@
 				$errors['hname'] = 'Hospital Name must be letters and spaces only';
 			}
 		}
+
+        // check if hospital exist in db
+
+        if(hosExs($conn, htmlspecialchars($_POST['hname']))){
+            header("Location: adddoc.php?error=hospitalalreadyindatabase");
+            $errors['hosE'] = 'Hospital is already in the database';
+        }
+
 
 		// check landline
 		if(empty($_POST['landline'])){
@@ -117,7 +123,7 @@
     <body>
 
         <?php require("nodeModules/navbarMod.php") ?>
-        
+        <div class="inpp">
         <section class="inp">
 
             <form action="addhos.php" method="POST" 
@@ -147,6 +153,6 @@
             </form>
 
         </section>
-            
+        </div>        
     </body>
 </html>
