@@ -17,7 +17,6 @@
 
 
 body {
-    max-width: 100%;
     margin: auto;
     background-color: var(--white1);
 }
@@ -211,19 +210,21 @@ body {
 
 /* inputs */
 
-.inp {
+.inpp {
 
-    position: absolute;
+    position: relative;
     left: 9%;
 
-    height: 80%;
+    min-height: 88%;
     width: 85%;
-    padding: 1%;
+    padding: 25% auto;
 
-    background-color: white;
+    background-color: blue;
 
     border-bottom-left-radius: var(--brdrrad1);
     border-bottom-right-radius: var(--brdrrad1);
+
+    overflow: hidden;
 }
 
 .iin {

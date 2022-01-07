@@ -1,22 +1,25 @@
 <?php
 
 	include('config/db_conn.php');
+	include('config/functions.php');
 
 	$email = $hname = $landline = '';
 	$errors = array('email' => '', 'hname' => '', 'landline' => '');
 
-    //end of file upload
+
+
+    //end of file upload globals
 
 	if(isset($_POST['submit'])){
+    
+        $filename = $_FILES["fileToUpload"]["name"];
+        $filenTmpName = $_FILES["fileToUpload"]["tmp_name"];
+        $fileSize = $_FILES["fileToUpload"]["size"];
+        $fileError = $_FILES["fileToUpload"]["error"];
+        $fileType = $_FILES["fileToUpload"]["type"];
 
         // file uploads
         $file = $_FILES['fileToUpload'];
-
-        $filename = $_FILES[['fileToUpload']]["name"];
-        $filenTmpName = $_FILES[['fileToUpload']]["filenTmpName"];
-        $fileSize = $_FILES[['fileToUpload']]["fileSize"];
-        $fileError = $_FILES[['fileToUpload']]["fileError"];
-        $fileType = $_FILES[['fileToUpload']]["fileType"];
 
         $fileExt = explode('.', $filename);
         $fileActualExt = strtolower(end($fileExt));
@@ -26,10 +29,10 @@
         if(!in_array($fileActualExt, $allowed)) {
             echo "cant upload file (filelype not supported)";
         } else {
-            if($fileError === 0) {
+            if($fileError == 0) {
                 $filenameNew = uniqid('', true).".".$fileActualExt;
 
-                $fileDest = 'images/logo/'.$filenameNew;
+                $fileDest = "images/logo/" . $filenameNew;
 
             } else {
                 echo "cant upload file";
@@ -68,7 +71,7 @@
 		}
 
 		if(array_filter($errors)){
-			//echo 'errors in form';
+			
 		} else {
 
             // upload file
@@ -90,8 +93,7 @@
 				// success
 				header('Location: hospitals.php');
 			} else {
-				echo 'query error: '. mysqli_error($conn);
-				header('Location: index.php');
+				header('Location: addhos.php');
 			}
 
 			
@@ -144,7 +146,7 @@
 
             </form>
 
-        </section >
+        </section>
             
     </body>
 </html>

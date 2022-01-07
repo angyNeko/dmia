@@ -4,6 +4,7 @@
     include('config/signin.php');
     
 
+
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +20,7 @@
 
     <body>
 
-        <img src="images/dmialogo.jpg">
+        <img src="images/logo/dmialogo.jpg">
 
         <h1>Login</h1>
 
@@ -27,11 +28,12 @@
             <form action="index.php" method="POST">
                 <label>UID</label> <br>
                 <input type="text" name="uid"> <br>
+
                 <label>Password</label> <br>
                 <input type="password" name="password"> <br>
-                <input type="submit" id="submit" name="submit" value="submit">
-                    <a href="saHome.php">Login</a>
-                </input>
+
+                <input type="submit" id="submit" name="submit" 
+                value="Login"> </input>
 
                 
             </form>

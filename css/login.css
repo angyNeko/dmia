@@ -39,6 +39,7 @@ h1 {
 }
 
 form {
+
     width: max-content;
     margin: 10% 20%;
 
@@ -49,16 +50,19 @@ label {
 }
 
 input {
-    height: 80%;
-    width: 205%;
+    height: 30px;
+    width: 350px;
+    margin-bottom: 10%;
 
-    margin-bottom: 35%;
     border-style: none;
+
 }
 
-button {
-    height: 20%;
-    width: 150%;
+#submit {
+    height: 30px;
+    width: 100%;
+    margin-top: 5%;
+
     background-color: white;
 
     border-style: none;

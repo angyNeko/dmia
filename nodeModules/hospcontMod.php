@@ -27,7 +27,7 @@
         <div class="hd">
 
             <div class="logcon">
-                <img src="<?php echo htmlspecialchars($hosp['imgpath']);?>" class="hdp">
+                <img src="<?php echo htmlspecialchars($hosp["imgpath"]);?>" class="hdp">
             </div>
 
             <div class="hnamecon">

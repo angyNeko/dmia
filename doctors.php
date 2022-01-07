@@ -2,7 +2,7 @@
 
 ?>
 
-        <button class="add" onclick="location.href = 'addhos.php'">
+        <button class="add" onclick="location.href = 'adddoc.php'">
             Add Doctor
         </button>
 

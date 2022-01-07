@@ -33,22 +33,25 @@ function emptInL($uid, $password){
     }
 }
 
+
+// login
+
 function loginuser($conn, $uid, $password){
     $uidExists = uidExs($conn, $uid);
 
-    if ($uidExists === false) {
+    if ($uidExists == false) {
         header("location: indexphp?error=inputdoesnotmatch");
-
+    }
         $dbps = $uidExists["passwrd"];
-        $chkp = password_verify($password, $dbps);
+        $chkp = ($password == $dbps);
 
         if ($chkp === false) {
-            header("location: indexphp?error=inputdoesnotmatch");
+            echo htmlspecialchars("Wrong input");
         } else if ($chkp === true) {
             session_start();
-            $_SESSION["userid"] = $uidExists("fname", "lname");
+            $_SESSION["userid"] = $uidExists["uid"];
             header("location: saHome.php");
             exit();
         }
-    }
+    
 }
