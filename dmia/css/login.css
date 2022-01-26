@@ -1,0 +1,69 @@
+:root {
+	--whis: #E8E8E8;
+	--blue1: #0DA2C2;
+}
+
+body{
+    margin: auto;
+}
+
+img {
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    width: 15%;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 36pt;
+
+    position: absolute;
+    top: 5%;
+}
+
+.loginblue {
+    background-color: var(--blue1);
+    
+    height: 70%;
+    width: 70%;
+
+    position: absolute;
+    top: 27%;
+    left: 3%;
+
+    border-radius: 0 35px 0 35px;
+
+}
+
+form {
+
+    width: max-content;
+    margin: 10% 20%;
+
+}
+
+label {
+    font-size: larger;
+}
+
+input {
+    height: 30px;
+    width: 350px;
+    margin-bottom: 10%;
+
+    border-style: none;
+
+}
+
+#submit {
+    height: 30px;
+    width: 100%;
+    margin-top: 5%;
+
+    background-color: white;
+
+    border-style: none;
+}

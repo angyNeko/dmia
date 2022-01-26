@@ -1,0 +1,336 @@
+:root {
+
+    --blue: #0DA2C2;
+	--blue1: #097187;
+    --white1: #E8E8E8;
+    --smok: #b1aeae;
+
+    --border: 1px solid black;
+
+    --brdrrad: 25px;
+    --brdrrad1: 15px;
+
+    --shadw: 10px 12px gray;
+    --shadwhvr: 10px 12px #2e2d2d;
+
+}
+
+
+body {
+    max-width: 100%;
+    margin: auto;
+    background-color: var(--white1);
+}
+
+/* navbar start */
+
+.navbarcont {
+    background-color: var(--blue);
+
+    height: 100%;
+    width: 5%;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    overflow: auto;
+
+    background-color: var(--blue);
+}
+
+.navbar {
+    height: auto;
+    width: 100%;
+
+    overflow: auto;
+
+    position: relative;
+    top: 25%;
+}
+
+.icon {
+    height: 12%;
+    width: 100%;
+    margin: auto;
+
+    position: relative;
+    top: 24%;
+
+}
+
+.icon:hover {
+    background-color: var(--blue1);
+}
+
+.a {
+    height: 100%;
+    width: 100%;
+    background-color:  white;
+}
+
+.icnimg {
+    width: 70%;
+    margin: 15% auto;
+    position: relative;
+
+    left: 13%;
+}
+
+/*  topnav */
+
+.topnav {
+    height: 10%;
+    width: 92%;
+    
+    position: absolute;
+    right: 0;
+
+    margin: auto;
+    padding: 0%;
+}
+
+.lef {
+    height: 100%;
+    width: 40%;
+    margin: 0;
+
+    position: absolute;
+    top: 0;
+
+    background-color: white;
+
+    border-bottom-left-radius: var(--brdrrad);
+    border-top-right-radius: var(--brdrrad);
+}
+
+.cp {
+    margin-left: 15%;
+}
+
+.rig {
+    height: 100%;
+    width: 25%;
+    margin: 0;
+
+    position: absolute;
+    top: 0;
+    right: 5%;
+
+    background-color: white;
+
+    border-top-left-radius: var(--brdrrad);
+    border-bottom-right-radius: var(--brdrrad);
+}
+
+.usr {
+    text-align: right;
+    text-decoration: none;
+    color: black;
+}
+
+.lg {
+    text-decoration: none;
+    color: black;
+}
+
+/* home content */
+
+.hmcon {
+    min-height: 75%;
+    width: 91%;
+
+    position: absolute;
+    top: 15%;
+    right: 0;
+
+    padding: 1%;
+    overflow: hidden;
+    overflow-wrap: normal;
+}
+
+.aconticon {
+    width: 20%;
+    background-color: white;
+
+    margin: 6.5%;
+
+    float: left;
+
+    border-right: var(--border);
+    border-bottom: var(--border);
+    border-radius: var(--brdrrad);
+
+    box-shadow: var(--shadw);
+
+    text-decoration: none;
+}
+
+.aconticon:hover {
+    background-color: var(--smok);
+    border-color: white;
+    box-shadow: var(--shadwhvr);
+}
+
+.conticon {
+    width: 70%;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: x-large;
+}
+
+.cicon {
+    width: 100%;
+    margin: auto;
+}
+
+/* add button */
+
+.add {
+    position: absolute;
+    right: 5%;
+    top: 15%;
+
+    min-height: 5%;
+    width: 12%;
+
+    padding: 8px 1px;
+
+    background-color: var(--blue);
+
+    outline: none;
+    border: 1px solid black;
+    border-radius: 8px;
+
+    color: white;
+}
+
+.add:hover {
+    background-color: var(--blue1);
+    border: 1px solid white;
+    border-radius: 12px;
+}
+
+/* hospital/doctor content */
+
+.hdcontent {
+    min-height: 77%;
+    width: 92%;
+
+    position: absolute;
+    right: 0;
+    top: 23%;
+
+}
+
+.hd {
+    height: auto;
+    width: 15%;
+    margin: 2%;
+    background-color: white;
+
+    box-shadow: var(--shadw);
+
+    overflow: hidden;
+
+    border-radius: var(--brdrrad);
+    border-right: var(--border);
+    border-bottom: var(--border);
+
+    float: left;
+
+}
+
+.logcon {
+    height: 80%;
+    width: 100%;
+
+    overflow: hidden;
+
+    border-bottom:1px solid #2e2d2d;
+}
+
+.hdp {
+    width: 85%;
+    margin: 8%;
+    border-radius: 50%;
+}
+
+.hnamecon {
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.hname {
+    margin: 5%;
+    text-align: center;
+}
+
+.hlin {
+    text-decoration: none;
+    color: black;
+}
+
+/* inputs */
+
+.inpp {
+
+    position: absolute;
+    left: 9%;
+
+    min-height: 88%;
+    width: 85%;
+    padding: 25% auto;
+
+    background-color: white;
+
+    border-bottom-left-radius: var(--brdrrad1);
+    border-bottom-right-radius: var(--brdrrad1);
+
+    overflow: hidden;
+}
+
+.inp {
+
+
+    min-height: 88%;
+    width: 85%;
+    padding: 25% auto;
+
+    margin: 5% auto;
+}
+
+.iin {
+    position: relative;
+    top: 15%;
+
+    margin: 0 15%;
+}
+
+.inlab {
+    margin-left: 1%;
+}
+
+.inin {
+    margin-top: 1%;
+    margin-bottom: 4%;
+
+    height: 25px;
+    width: 45%;
+}
+
+.cent {
+    width: 100%;
+    float: left;
+    margin: auto;
+}
+
+.subm {
+    margin: auto;
+}
